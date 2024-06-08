@@ -27,19 +27,19 @@ public class ConsoleController {
             String command = scanner.nextLine();
             switch (command) {
                 case "USER_CREATE":
-                    createUser(); return;
+                    createUser(); break;
                 case "SHOW_ALL_USERS":
-                    showAllUsers(); return;
+                    showAllUsers(); break;
                 case "ACCOUNT_CREATE":
-                    accountCreate(); return;
+                    accountCreate(); break;
                 case "ACCOUNT_CLOSE":
-                    accountClose(); return;
+                    accountClose(); break;
                 case "ACCOUNT_DEPOSIT":
-                    accountDeposit(); return;
+                    accountDeposit(); break;
                 case "ACCOUNT_TRANSFER":
-                    accountTransfer(); return;
+                    accountTransfer(); break;
                 case "ACCOUNT_WITHDRAW":
-                    accountWithdraw(); return;
+                    accountWithdraw(); break;
                 default:
                     System.out.println("Invalid command");
             }
@@ -62,7 +62,7 @@ public class ConsoleController {
     public void accountCreate(){
         System.out.println("Enter userId: ");
         String userId = scanner.nextLine();
-        accountService.createAccount(Long.parseLong(userId));
+        accountService.createAccount(userService.findById(Long.parseLong(userId)));
     }
 
     public void accountClose(){
