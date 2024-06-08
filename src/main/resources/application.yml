@@ -1,3 +1,6 @@
 spring:
   application:
     name: SpringCorePractice_Bank
+account:
+  default-amount: 0.0
+  transfer-commission: 1
